@@ -1,9 +1,6 @@
 package net.mastersloth.slothee.procedures;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
@@ -41,64 +38,40 @@ public class CreativeRfGeneratorNeighbourBlockChangesProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		new Object() {
-			private int ticks = 0;
-			private float waitTicks;
-			private IWorld world;
-			public void start(IWorld world, int waitTicks) {
-				this.waitTicks = waitTicks;
-				MinecraftForge.EVENT_BUS.register(this);
-				this.world = world;
+		if (((new Object() {
+			public boolean canReceiveEnergy(IWorld world, BlockPos pos) {
+				AtomicBoolean _retval = new AtomicBoolean(false);
+				TileEntity _ent = world.getTileEntity(pos);
+				if (_ent != null)
+					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.canReceive()));
+				return _retval.get();
 			}
-
-			@SubscribeEvent
-			public void tick(TickEvent.ServerTickEvent event) {
-				if (event.phase == TickEvent.Phase.END) {
-					this.ticks += 1;
-					if (this.ticks >= this.waitTicks)
-						run();
+		}.canReceiveEnergy(world, new BlockPos((int) x, (int) y, (int) z))) && ((new Object() {
+			public int receiveEnergySimulate(IWorld world, BlockPos pos, int _amount) {
+				AtomicInteger _retval = new AtomicInteger(0);
+				TileEntity _ent = world.getTileEntity(pos);
+				if (_ent != null)
+					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.receiveEnergy(_amount, true)));
+				return _retval.get();
+			}
+		}.receiveEnergySimulate(world, new BlockPos((int) x, (int) y, (int) z), (int) 1000)) >= 100))) {
+			while (((new Object() {
+				public int receiveEnergySimulate(IWorld world, BlockPos pos, int _amount) {
+					AtomicInteger _retval = new AtomicInteger(0);
+					TileEntity _ent = world.getTileEntity(pos);
+					if (_ent != null)
+						_ent.getCapability(CapabilityEnergy.ENERGY, null)
+								.ifPresent(capability -> _retval.set(capability.receiveEnergy(_amount, true)));
+					return _retval.get();
+				}
+			}.receiveEnergySimulate(world, new BlockPos((int) x, (int) y, (int) z), (int) 1000)) >= 100)) {
+				{
+					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					int _amount = (int) 100;
+					if (_ent != null)
+						_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.receiveEnergy(_amount, false));
 				}
 			}
-
-			private void run() {
-				if (((new Object() {
-					public boolean canReceiveEnergy(IWorld world, BlockPos pos) {
-						AtomicBoolean _retval = new AtomicBoolean(false);
-						TileEntity _ent = world.getTileEntity(pos);
-						if (_ent != null)
-							_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.canReceive()));
-						return _retval.get();
-					}
-				}.canReceiveEnergy(world, new BlockPos((int) x, (int) y, (int) z))) && ((new Object() {
-					public int receiveEnergySimulate(IWorld world, BlockPos pos, int _amount) {
-						AtomicInteger _retval = new AtomicInteger(0);
-						TileEntity _ent = world.getTileEntity(pos);
-						if (_ent != null)
-							_ent.getCapability(CapabilityEnergy.ENERGY, null)
-									.ifPresent(capability -> _retval.set(capability.receiveEnergy(_amount, true)));
-						return _retval.get();
-					}
-				}.receiveEnergySimulate(world, new BlockPos((int) x, (int) y, (int) z), (int) 1000)) >= 100))) {
-					while (((new Object() {
-						public int receiveEnergySimulate(IWorld world, BlockPos pos, int _amount) {
-							AtomicInteger _retval = new AtomicInteger(0);
-							TileEntity _ent = world.getTileEntity(pos);
-							if (_ent != null)
-								_ent.getCapability(CapabilityEnergy.ENERGY, null)
-										.ifPresent(capability -> _retval.set(capability.receiveEnergy(_amount, true)));
-							return _retval.get();
-						}
-					}.receiveEnergySimulate(world, new BlockPos((int) x, (int) y, (int) z), (int) 1000)) >= 100)) {
-						{
-							TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-							int _amount = (int) 100;
-							if (_ent != null)
-								_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.receiveEnergy(_amount, false));
-						}
-					}
-				}
-				MinecraftForge.EVENT_BUS.unregister(this);
-			}
-		}.start(world, (int) 20);
+		}
 	}
 }

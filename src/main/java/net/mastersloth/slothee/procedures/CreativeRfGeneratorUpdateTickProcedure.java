@@ -10,6 +10,7 @@ import net.mastersloth.slothee.SlotheeMod;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Map;
+import java.util.HashMap;
 
 public class CreativeRfGeneratorUpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -61,6 +62,14 @@ public class CreativeRfGeneratorUpdateTickProcedure {
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.receiveEnergy(_amount, false));
 			}
+		}
+		{
+			Map<String, Object> $_dependencies = new HashMap<>();
+			$_dependencies.put("x", x);
+			$_dependencies.put("y", y);
+			$_dependencies.put("z", z);
+			$_dependencies.put("world", world);
+			CreativeRfGeneratorNeighbourBlockChangesProcedure.executeProcedure($_dependencies);
 		}
 	}
 }
