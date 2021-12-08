@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Sloth",
     "mobLabel": "Flash",
-    "mobModelName": "Villager",
+    "mobModelName": "Modelplayer",
     "mobModelTexture": "mastersloth1.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.6,
