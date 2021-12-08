@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "slothee:block/coffee_machine"
+    },
+    "facing=east": {
+      "model": "slothee:block/coffee_machine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "slothee:block/coffee_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "slothee:block/coffee_machine",
+      "y": 270
+    }
+  }
+}

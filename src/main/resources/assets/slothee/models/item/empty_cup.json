@@ -1,0 +1,10 @@
+{
+  "parent": "slothee:custom/empty_cup",
+  "textures": {
+    "0": "slothee:blocks/outside_cup",
+    "1": "slothee:blocks/rim_cup",
+    "2": "slothee:blocks/inside_cup",
+    "missing": "slothee:blocks/",
+    "particle": "slothee:items/coffee_bean"
+  }
+}

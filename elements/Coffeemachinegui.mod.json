@@ -1,0 +1,152 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:Coffeebean"
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 150,
+          "y": 53
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 258,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<energy>",
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "name": "<energy>",
+          "x": 132,
+          "y": 106
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<fluidlevel>",
+          "color": {
+            "value": -16737793,
+            "falpha": 0.0
+          },
+          "name": "<fluidlevel>",
+          "x": 222,
+          "y": 107
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:EmptyCup"
+          },
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 177,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "cup",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "cup",
+          "x": 177,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Coffee",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Coffee",
+          "x": 138,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Beans",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Beans",
+          "x": 143,
+          "y": 81
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Water",
+          "color": {
+            "value": -16737793,
+            "falpha": 0.0
+          },
+          "name": "Water",
+          "x": 222,
+          "y": 95
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Energy/RF",
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "name": "Energy/RF",
+          "x": 132,
+          "y": 96
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

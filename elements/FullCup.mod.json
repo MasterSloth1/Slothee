@@ -1,0 +1,26 @@
+{
+  "_fv": 24,
+  "_type": "food",
+  "definition": {
+    "renderType": 1,
+    "texture": "coffee_bean",
+    "customModelName": "full_cup:default",
+    "name": "Full Coffee Cup",
+    "rarity": "COMMON",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "FOOD"
+    },
+    "stackSize": 64,
+    "nutritionalValue": 8,
+    "saturation": 4.0,
+    "eatingSpeed": 40,
+    "resultItem": {
+      "value": "CUSTOM:EmptyCup"
+    },
+    "forDogs": false,
+    "isAlwaysEdible": true,
+    "animation": "drink",
+    "hasGlow": false
+  }
+}

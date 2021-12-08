@@ -1,0 +1,26 @@
+{
+  "_fv": 24,
+  "_type": "food",
+  "definition": {
+    "renderType": 0,
+    "texture": "coffee_bean",
+    "customModelName": "Normal",
+    "name": "Slothee Cup",
+    "rarity": "COMMON",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "FOOD"
+    },
+    "stackSize": 1,
+    "nutritionalValue": 20,
+    "saturation": 20.0,
+    "eatingSpeed": 100,
+    "resultItem": {
+      "value": "CUSTOM:EmptyCup"
+    },
+    "forDogs": false,
+    "isAlwaysEdible": true,
+    "animation": "drink",
+    "hasGlow": true
+  }
+}

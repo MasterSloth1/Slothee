@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "slothee:blocks/coffee",
+    "particle": "slothee:blocks/coffee"
+  }
+}

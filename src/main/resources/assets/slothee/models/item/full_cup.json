@@ -1,0 +1,8 @@
+{
+  "parent": "slothee:custom/full_cup",
+  "textures": {
+    "3": "slothee:blocks/full_cup",
+    "missing": "slothee:blocks/",
+    "particle": "slothee:items/coffee_bean"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "parts": {
+    "part1": {
+      "loader": "forge:obj",
+      "model": "slothee:models/item/steve.obj",
+      "ambientToFullbright": true,
+      "textures": {
+        "#m_0": "slothee:blocks/mastersloth1"
+      }
+    }
+  },
+  "textures": {
+    "particle": "slothee:blocks/mastersloth1"
+  }
+}
