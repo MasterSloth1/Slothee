@@ -28,7 +28,6 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -54,7 +53,6 @@ import net.mastersloth.slothee.procedures.SlothRightClickedOnEntityProcedure;
 import net.mastersloth.slothee.item.SlotheeCupItem;
 import net.mastersloth.slothee.item.FullCupItem;
 import net.mastersloth.slothee.item.EmptyCupItem;
-import net.mastersloth.slothee.item.CoffeebeanItem;
 import net.mastersloth.slothee.entity.renderer.SlothRenderer;
 import net.mastersloth.slothee.SlotheeModElements;
 
@@ -122,8 +120,6 @@ public class SlothEntity extends SlotheeModElements.ModElement {
 			setNoAI(false);
 			setCustomName(new StringTextComponent("Flash"));
 			setCustomNameVisible(true);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(EmptyCupItem.block));
-			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(CoffeebeanItem.block));
 		}
 
 		@Override
@@ -231,6 +227,10 @@ public class SlothEntity extends SlotheeModElements.ModElement {
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("sourceentity", sourceentity);
 				$_dependencies.put("itemstack", itemstack);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
 				SlothRightClickedOnEntityProcedure.executeProcedure($_dependencies);
 			}
 			return retval;

@@ -27,10 +27,10 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": "CUSTOM:EmptyCup"
+      "value": ""
     },
     "equipmentOffHand": {
-      "value": "CUSTOM:Coffeebean"
+      "value": ""
     },
     "equipmentHelmet": {
       "value": ""
