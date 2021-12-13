@@ -8,7 +8,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "coffee_machine"
+      "registry_name": "coffee_machine",
+      "path": "~/block"
     },
     {
       "name": "Coffee",
@@ -17,7 +18,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "coffee"
+      "registry_name": "coffee",
+      "path": "~/plant"
     },
     {
       "name": "CoffeebeanFoodEaten",
@@ -34,7 +36,8 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/procedure"
     },
     {
       "name": "Coffeebean",
@@ -43,7 +46,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "coffeebean"
+      "registry_name": "coffeebean",
+      "path": "~/food"
     },
     {
       "name": "Coffeemachinegui",
@@ -52,7 +56,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "coffeemachinegui"
+      "registry_name": "coffeemachinegui",
+      "path": "~/gui"
     },
     {
       "name": "EmptyCup",
@@ -61,7 +66,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "empty_cup"
+      "registry_name": "empty_cup",
+      "path": "~/item"
     },
     {
       "name": "FullCup",
@@ -70,7 +76,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "full_cup"
+      "registry_name": "full_cup",
+      "path": "~/food"
     },
     {
       "name": "SlotheeCup",
@@ -79,7 +86,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "slothee_cup"
+      "registry_name": "slothee_cup",
+      "path": "~/food"
     },
     {
       "name": "SlothRightClickedOnEntity",
@@ -104,7 +112,8 @@
             "type": "itemstack"
           }
         ]
-      }
+      },
+      "path": "~/procedure"
     },
     {
       "name": "Sloth",
@@ -113,7 +122,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "sloth"
+      "registry_name": "sloth",
+      "path": "~/entity"
     },
     {
       "name": "CreativeRfGeneratorUpdateTick",
@@ -142,7 +152,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/procedure"
     },
     {
       "name": "CreativeRfGenerator",
@@ -151,7 +162,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "creative_rf_generator"
+      "registry_name": "creative_rf_generator",
+      "path": "~/block"
     },
     {
       "name": "CoffeeMachineOnBlockRightClicked",
@@ -184,7 +196,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/procedure"
     },
     {
       "name": "CreativeRfGeneratorNeighbourBlockChanges",
@@ -213,7 +226,66 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/procedure"
+    },
+    {
+      "name": "Flour",
+      "type": "item",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flour",
+      "path": "~/food"
+    },
+    {
+      "name": "Pasta",
+      "type": "food",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pasta",
+      "path": "~/food"
+    },
+    {
+      "name": "SaltBlock",
+      "type": "block",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "salt_block",
+      "path": "~/block"
+    },
+    {
+      "name": "Salt",
+      "type": "food",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "salt",
+      "path": "~/food"
+    },
+    {
+      "name": "SlotheeCupFoodEaten",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "slothee_cup_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedure"
     }
   ],
   "variable_elements": [],
@@ -221,19 +293,52 @@
   "language_map": {
     "en_us": {
       "entity.slothee.sloth": "Sloth",
+      "item.slothee.pasta": "Pasta",
       "item.slothee.sloth_spawn_egg": "Sloth Spawn Egg",
+      "item.slothee.salt": "Salt",
+      "item.slothee.flour": "Flour",
       "block.slothee.coffee": "Coffee",
       "item.slothee.empty_cup": "Empty Coffee Cup",
       "item.slothee.coffeebean": "Coffeebean",
       "block.slothee.creative_rf_generator": "Creative Rf Generator",
       "item.slothee.full_cup": "Full Coffee Cup",
       "block.slothee.coffee_machine": "Coffee Machine",
+      "block.slothee.salt_block": "Salt Block",
       "item.slothee.slothee_cup": "Slothee Cup"
     }
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "block",
+        "children": []
+      },
+      {
+        "name": "item",
+        "children": []
+      },
+      {
+        "name": "entity",
+        "children": []
+      },
+      {
+        "name": "food",
+        "children": []
+      },
+      {
+        "name": "plant",
+        "children": []
+      },
+      {
+        "name": "procedure",
+        "children": []
+      },
+      {
+        "name": "gui",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "slothee",

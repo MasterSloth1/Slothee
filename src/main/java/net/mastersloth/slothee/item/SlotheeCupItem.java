@@ -15,7 +15,11 @@ import net.minecraft.item.Food;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 
+import net.mastersloth.slothee.procedures.SlotheeCupFoodEatenProcedure;
 import net.mastersloth.slothee.SlotheeModElements;
+
+import java.util.Map;
+import java.util.HashMap;
 
 @SlotheeModElements.ModElement.Tag
 public class SlotheeCupItem extends SlotheeModElements.ModElement {
@@ -61,6 +65,14 @@ public class SlotheeCupItem extends SlotheeModElements.ModElement {
 		public ItemStack onItemUseFinish(ItemStack itemstack, World world, LivingEntity entity) {
 			ItemStack retval = new ItemStack(EmptyCupItem.block);
 			super.onItemUseFinish(itemstack, world, entity);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				SlotheeCupFoodEatenProcedure.executeProcedure($_dependencies);
+			}
 			if (itemstack.isEmpty()) {
 				return retval;
 			} else {

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "slothee:blocks/coffee",
+    "up": "slothee:blocks/coffee",
+    "north": "slothee:blocks/coffee",
+    "east": "slothee:blocks/coffee",
+    "south": "slothee:blocks/coffee",
+    "west": "slothee:blocks/coffee",
+    "particle": "slothee:blocks/coffee"
+  }
+}

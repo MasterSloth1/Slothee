@@ -21,6 +21,9 @@
     "forDogs": false,
     "isAlwaysEdible": true,
     "animation": "drink",
-    "hasGlow": true
+    "hasGlow": true,
+    "onEaten": {
+      "name": "SlotheeCupFoodEaten"
+    }
   }
 }
